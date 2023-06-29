@@ -7,6 +7,8 @@ defmodule BlogApiWeb.Router do
 
   scope "/api", BlogApiWeb do
     pipe_through :api
+
+    resources "/posts", PostController, only: [:index, :show, :create, :update, :delete]
   end
 
   # Enable LiveDashboard and Swoosh mailbox preview in development
